@@ -1131,7 +1131,7 @@ code {
         <div class="overview-text reveal">
           <p>
             This embedded project implements a <strong>4-degree-of-freedom robotic arm</strong> controlled
-            entirely by an Arduino Uno microcontroller. Four MG996R high-torque servos drive the base rotation,
+            entirely by an Arduino Uno microcontroller. Four Micro Servo 9G (SG90) units drive the base rotation,
             shoulder, elbow, and wrist joints — each independently mapped through analog potentiometer inputs.
           </p>
           <p>
@@ -1157,13 +1157,14 @@ code {
             <div class="spec-row"><span>Controller</span><span>Arduino Uno (ATmega328P)</span></div>
             <div class="spec-row"><span>Clock Speed</span><span>16 MHz</span></div>
             <div class="spec-row"><span>Degrees of Freedom</span><span>4</span></div>
-            <div class="spec-row"><span>Servo Type</span><span>MG996R (Metal Gear)</span></div>
-            <div class="spec-row"><span>Torque (stall)</span><span>9.4 kg·cm @ 4.8V</span></div>
+            <div class="spec-row"><span>Servo Type</span><span>Micro Servo 9G (SG90)</span></div>
+            <div class="spec-row"><span>Torque (stall)</span><span>~1.8 kg·cm @ 4.8V</span></div>
+            <div class="spec-row"><span>Frame Material</span><span>ABS 3D Printed</span></div>
             <div class="spec-row"><span>Position Resolution</span><span>1° increments</span></div>
             <div class="spec-row"><span>Max Stored Positions</span><span>50 waypoints</span></div>
             <div class="spec-row"><span>Loop Frequency</span><span>~50 Hz</span></div>
             <div class="spec-row"><span>Interpolation Steps</span><span>Configurable (1–50)</span></div>
-            <div class="spec-row"><span>Power Supply</span><span>5–6V external (servos)</span></div>
+            <div class="spec-row"><span>Power Supply</span><span>4.8–6V external (servos)</span></div>
           </div>
         </div>
       </div>
@@ -1225,7 +1226,7 @@ code {
           </div>
           <div class="feature-number">05</div>
           <h3>Safety Angle Constraints</h3>
-          <p>Each servo joint is individually constrained to a validated angular envelope defined in firmware constants. Regardless of raw potentiometer input, the mapped output is clamped before being written to the servo. This prevents over-rotation, physical collision between arm links, and mechanical damage to gears under load.</p>
+          <p>Each servo joint is individually constrained to a validated angular envelope defined in firmware constants. Regardless of raw potentiometer input, the mapped output is clamped before being written to the servo. This prevents over-rotation, physical collision between arm links, and mechanical wear to gears under load.</p>
           <div class="feature-tag">Clamp · Per-Joint Limits · Collision Avoidance</div>
         </div>
 
@@ -1271,8 +1272,8 @@ code {
             </tr>
             <tr>
               <td class="td-num">02</td>
-              <td class="td-name"><span class="comp-dot blue"></span>MG996R Servo Motor</td>
-              <td>Metal gear · 9.4 kg·cm · 180° range · 4.8–7.2V</td>
+              <td class="td-name"><span class="comp-dot blue"></span>Micro Servo 9G (SG90)</td>
+              <td>Plastic gear · ~1.8 kg·cm · 180° range · 4.8–6V</td>
               <td>4</td>
               <td>Joint actuators (base, shoulder, elbow, wrist)</td>
             </tr>
@@ -1293,14 +1294,14 @@ code {
             <tr>
               <td class="td-num">05</td>
               <td class="td-name"><span class="comp-dot cyan"></span>External Power Supply</td>
-              <td>5–6V DC · ≥3A regulated (servo load)</td>
+              <td>4.8–6V DC · ≥1A regulated (servo load)</td>
               <td>1</td>
               <td>Dedicated servo power (isolated from Uno VCC)</td>
             </tr>
             <tr>
               <td class="td-num">06</td>
               <td class="td-name"><span class="comp-dot blue"></span>Robotic Arm Frame</td>
-              <td>Aluminium / PLA printed · 4-link chain design</td>
+              <td>ABS 3D printed · 4-link chain design</td>
               <td>1</td>
               <td>Mechanical structure — mounts servos and links</td>
             </tr>
@@ -1462,8 +1463,8 @@ for(int t = 0; t &lt;= STEPS; t++) {
             <span class="tech-icon">⊞</span>
             <h3>Mechanical Safety Constraints</h3>
           </div>
-          <p>Firmware-level constraints prevent commanding any joint beyond its physical travel. Per-joint min/max constants are derived from mechanical measurement of the arm's safe range, accounting for link clearances and cable management. The constrain() function ensures voltage noise or software bugs can never produce an out-of-range write, preventing gear stripping and structural collision.</p>
-          <div class="tech-tags"><span>constrain()</span><span>Per-joint constants</span><span>Mechanical clearance</span><span>Failsafe</span></div>
+          <p>Firmware-level constraints prevent commanding any joint beyond its physical travel. Per-joint min/max constants are derived from mechanical measurement of the arm's safe range, accounting for link clearances and cable management. The constrain() function ensures voltage noise or software bugs can never produce an out-of-range write, preventing gear wear and structural collision in the ABS-printed frame.</p>
+          <div class="tech-tags"><span>constrain()</span><span>Per-joint constants</span><span>ABS Frame</span><span>Failsafe</span></div>
         </div>
 
       </div>
@@ -1518,7 +1519,7 @@ for(int t = 0; t &lt;= STEPS; t++) {
           <div class="roadmap-status concept">CONCEPT</div>
           <div class="roadmap-icon">⚡</div>
           <h3>Minimum-Jerk Trajectory Planning</h3>
-          <p>Replace linear interpolation with 5th-order polynomial (minimum-jerk) motion profiles, producing smooth acceleration/deceleration envelopes. This reduces mechanical stress on gears and improves precision at trajectory endpoints.</p>
+          <p>Replace linear interpolation with 5th-order polynomial (minimum-jerk) motion profiles, producing smooth acceleration/deceleration envelopes. This reduces mechanical stress on the ABS-printed joints and improves precision at trajectory endpoints.</p>
         </div>
 
       </div>
@@ -1536,7 +1537,7 @@ for(int t = 0; t &lt;= STEPS; t++) {
           <p>Robotic Arm with Position Memory<br/>Arduino Uno · Embedded Systems Project</p>
         </div>
         <div class="footer-meta">
-          <span class="mono-text">BUILD: 2024.REV.1</span>
+          <span class="mono-text">BUILD: 2024.REV.2</span>
           <span class="mono-text">PLATFORM: ATmega328P</span>
           <span class="mono-text">STATUS: <span class="accent">OPERATIONAL</span></span>
         </div>
@@ -1547,49 +1548,31 @@ for(int t = 0; t &lt;= STEPS; t++) {
   </footer>
 
   <script>
-/* ═══════════════════════════════════════════════════════════════
-   ROBOTIC ARM POSITION MEMORY — SCRIPT
-   Scroll reveal · Counter animation · Nav · Smooth UX
-   ═══════════════════════════════════════════════════════════════ */
-
 'use strict';
 
-/* ─── NAVBAR SCROLL BEHAVIOR ─────────────────────────────────── */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
-
-  let lastScrollY = window.scrollY;
   let ticking = false;
-
   function onScroll() {
     if (!ticking) {
       requestAnimationFrame(() => {
-        if (window.scrollY > 30) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-        lastScrollY = window.scrollY;
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
         ticking = false;
       });
       ticking = true;
     }
   }
-
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
 
-/* ─── HAMBURGER MOBILE MENU ──────────────────────────────────── */
 (function initHamburger() {
   const btn = document.getElementById('hamburger');
   const menu = document.getElementById('navMobile');
   if (!btn || !menu) return;
-
   btn.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     btn.setAttribute('aria-expanded', isOpen);
-    // animate the bars
     const spans = btn.querySelectorAll('span');
     if (isOpen) {
       spans[0].style.transform = 'rotate(45deg) translateY(7px)';
@@ -1599,115 +1582,76 @@ for(int t = 0; t &lt;= STEPS; t++) {
       spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     }
   });
-
-  // close on link click
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('open');
-      const spans = btn.querySelectorAll('span');
-      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+      btn.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
     });
   });
 })();
 
-/* ─── SCROLL REVEAL ──────────────────────────────────────────── */
 (function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length) return;
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // once revealed, stop observing
           observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    }
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
   );
-
   elements.forEach(el => observer.observe(el));
 })();
 
-/* ─── COUNTER ANIMATION ──────────────────────────────────────── */
 (function initCounters() {
   const counters = document.querySelectorAll('.stat-val[data-target]');
   if (!counters.length) return;
-
-  function easeOutQuad(t) {
-    return t * (2 - t);
-  }
-
+  function easeOutQuad(t) { return t * (2 - t); }
   function animateCounter(el, target, duration = 1600) {
     const start = performance.now();
-    const startVal = 0;
-
     function step(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutQuad(progress);
-      const current = Math.round(startVal + (target - startVal) * eased);
-      el.textContent = current;
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target;
-      }
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(target * easeOutQuad(progress));
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
     }
-
     requestAnimationFrame(step);
   }
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const target = parseInt(entry.target.dataset.target, 10);
-          animateCounter(entry.target, target);
+          animateCounter(entry.target, parseInt(entry.target.dataset.target, 10));
           observer.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.5 }
   );
-
   counters.forEach(el => observer.observe(el));
 })();
 
-/* ─── ACTIVE NAV LINK ON SCROLL ──────────────────────────────── */
 (function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
-
   if (!sections.length || !navLinks.length) return;
-
   function setActive() {
     let current = '';
     sections.forEach(section => {
-      const top = section.offsetTop - 90;
-      if (window.scrollY >= top) {
-        current = section.getAttribute('id');
-      }
+      if (window.scrollY >= section.offsetTop - 90) current = section.getAttribute('id');
     });
-
     navLinks.forEach(link => {
-      link.classList.remove('nav-active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('nav-active');
-      }
+      link.classList.toggle('nav-active', link.getAttribute('href') === `#${current}`);
     });
   }
-
   window.addEventListener('scroll', setActive, { passive: true });
   setActive();
 })();
 
-/* ─── SMOOTH SCROLL FOR ALL ANCHOR LINKS ────────────────────── */
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -1717,156 +1661,93 @@ for(int t = 0; t &lt;= STEPS; t++) {
       if (!target) return;
       e.preventDefault();
       const navHeight = document.getElementById('navbar')?.offsetHeight || 60;
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight;
-      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navHeight, behavior: 'smooth' });
     });
   });
 })();
 
-/* ─── TECH CARD TILT EFFECT (subtle) ────────────────────────── */
 (function initCardTilt() {
-  const cards = document.querySelectorAll('.feature-card, .tech-card, .roadmap-item');
-
-  cards.forEach(card => {
+  document.querySelectorAll('.feature-card, .tech-card, .roadmap-item').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const rotX = ((y - cy) / cy) * -3;
-      const rotY = ((x - cx) / cx) * 3;
+      const rotX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -3;
+      const rotY = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 3;
       card.style.transform = `translateY(-4px) perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
     });
-
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
       card.style.transition = 'transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease';
     });
-
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'none';
-    });
+    card.addEventListener('mouseenter', () => { card.style.transition = 'none'; });
   });
 })();
 
-/* ─── TYPING EFFECT FOR HERO TAGLINE ─────────────────────────── */
 (function initTypingEffect() {
   const tagline = document.querySelector('.hero-tagline');
   if (!tagline) return;
-
   const text = tagline.textContent;
   tagline.textContent = '';
   tagline.style.borderRight = '2px solid var(--cyan)';
   tagline.style.animation = 'none';
-
-  let i = 0;
-  let started = false;
-
-  // Start after reveal delay
+  let i = 0, started = false;
   function startTyping() {
     if (started) return;
     started = true;
     const interval = setInterval(() => {
-      if (i < text.length) {
-        tagline.textContent += text[i];
-        i++;
-      } else {
+      if (i < text.length) { tagline.textContent += text[i++]; }
+      else {
         clearInterval(interval);
-        // blink cursor then remove
-        setTimeout(() => {
-          tagline.style.borderRight = 'none';
-        }, 1200);
+        setTimeout(() => { tagline.style.borderRight = 'none'; }, 1200);
       }
     }, 38);
   }
-
   setTimeout(startTyping, 600);
 })();
 
-/* ─── CODE BLOCK SYNTAX COLORING ─────────────────────────────── */
 (function initCodeHighlight() {
-  const codeBlocks = document.querySelectorAll('.layer-code code');
-
-  const keywords = ['for', 'int', 'float', 'void', 'if', 'while', 'return', 'const'];
-  const commentRe = /(\/\/.+)/g;
-
-  codeBlocks.forEach(block => {
-    let html = block.textContent;
-
-    // Escape HTML entities first
-    html = html
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
-
-    // Comments
-    html = html.replace(commentRe, '<span style="color:#4a7a8a;font-style:italic">$1</span>');
-
-    // Keywords
-    keywords.forEach(kw => {
-      const re = new RegExp(`\\b(${kw})\\b`, 'g');
-      html = html.replace(re, '<span style="color:#7fb8ff">$1</span>');
+  document.querySelectorAll('.layer-code code').forEach(block => {
+    let html = block.textContent
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    html = html.replace(/(\/\/.+)/g, '<span style="color:#4a7a8a;font-style:italic">$1</span>');
+    ['for','int','float','void','if','while','return','const'].forEach(kw => {
+      html = html.replace(new RegExp(`\\b(${kw})\\b`, 'g'), '<span style="color:#7fb8ff">$1</span>');
     });
-
-    // Numbers
     html = html.replace(/\b(\d+)\b/g, '<span style="color:#c7a0ff">$1</span>');
-
-    // Strings in quotes
     html = html.replace(/(["'])([^"']*)\1/g, '<span style="color:#90c97a">$1$2$1</span>');
-
     block.innerHTML = html;
   });
 })();
 
-/* ─── LAYER CARDS STAGGER ON SCROLL ─────────────────────────── */
 (function initLayerStagger() {
-  const layers = document.querySelectorAll('.layer-card');
-  layers.forEach((card, i) => {
+  document.querySelectorAll('.layer-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.08}s`;
   });
 })();
 
-/* ─── TERMINAL GLITCH ON LOGO ────────────────────────────────── */
 (function initLogoGlitch() {
   const logo = document.querySelector('.nav-logo');
   if (!logo) return;
-
   const chars = '!@#$%^&*<>?/\\|01';
-
   function glitch() {
     const logoText = logo.querySelector('.logo-text');
     if (!logoText) return;
-    const original = 'ARM_CTL';
     let count = 0;
     const interval = setInterval(() => {
-      logoText.innerHTML = original.split('').map((char, i) => {
+      logoText.innerHTML = 'ARM_CTL'.split('').map((char, i) => {
         if (char === '_') return '<span class="accent">_</span>';
-        if (i < 3) {
-          return count < 3 ? chars[Math.floor(Math.random() * chars.length)] : char;
-        }
+        if (i < 3) return count < 3 ? chars[Math.floor(Math.random() * chars.length)] : char;
         return `<span class="accent">${char}</span>`;
       }).join('');
-      count++;
-      if (count > 5) {
-        clearInterval(interval);
-        logoText.innerHTML = 'ARM<span class="accent">_CTL</span>';
-      }
+      if (++count > 5) { clearInterval(interval); logoText.innerHTML = 'ARM<span class="accent">_CTL</span>'; }
     }, 60);
   }
-
   logo.addEventListener('mouseenter', glitch);
 })();
 
-/* ─── FOOTER YEAR ────────────────────────────────────────────── */
 (function setYear() {
   const el = document.querySelector('.footer-copy');
-  if (el) {
-    const yr = new Date().getFullYear();
-    el.textContent = el.textContent.replace('2024', yr);
-  }
+  if (el) el.textContent = el.textContent.replace('2024', new Date().getFullYear());
 })();
-
 </script>
 </body>
 </html>
