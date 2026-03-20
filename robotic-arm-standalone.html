@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,29 +13,29 @@
 
 /* ─── VARIABLES ─────────────────────────────────────────────── */
 :root {
-  --bg-base:      #080c12;
-  --bg-surface:   #0d1520;
-  --bg-card:      #101a28;
-  --bg-card-hover:#132030;
-  --bg-alt:       #0a1018;
-  --border:       rgba(0, 180, 230, 0.15);
-  --border-bright:rgba(0, 220, 255, 0.35);
-  --cyan:         #00d4ff;
-  --cyan-dim:     #00b4d8;
-  --cyan-glow:    rgba(0, 212, 255, 0.12);
-  --blue:         #1a6bff;
-  --blue-dim:     #1254cc;
-  --blue-glow:    rgba(26, 107, 255, 0.15);
-  --text-primary: #ddeeff;
-  --text-sec:     #8aaabb;
-  --text-muted:   #4a6677;
-  --accent:       #00d4ff;
-  --font-display: 'Rajdhani', sans-serif;
-  --font-body:    'Exo 2', sans-serif;
-  --font-mono:    'Share Tech Mono', monospace;
-  --radius:       4px;
-  --radius-lg:    8px;
-  --transition:   0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+–bg-base:      #080c12;
+–bg-surface:   #0d1520;
+–bg-card:      #101a28;
+–bg-card-hover:#132030;
+–bg-alt:       #0a1018;
+–border:       rgba(0, 180, 230, 0.15);
+–border-bright:rgba(0, 220, 255, 0.35);
+–cyan:         #00d4ff;
+–cyan-dim:     #00b4d8;
+–cyan-glow:    rgba(0, 212, 255, 0.12);
+–blue:         #1a6bff;
+–blue-dim:     #1254cc;
+–blue-glow:    rgba(26, 107, 255, 0.15);
+–text-primary: #ddeeff;
+–text-sec:     #8aaabb;
+–text-muted:   #4a6677;
+–accent:       #00d4ff;
+–font-display: ‘Rajdhani’, sans-serif;
+–font-body:    ‘Exo 2’, sans-serif;
+–font-mono:    ‘Share Tech Mono’, monospace;
+–radius:       4px;
+–radius-lg:    8px;
+–transition:   0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ─── RESET & BASE ──────────────────────────────────────────── */
@@ -43,145 +44,172 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: var(--font-body);
-  background: var(--bg-base);
-  color: var(--text-primary);
-  line-height: 1.7;
-  overflow-x: hidden;
+font-family: var(–font-body);
+background: var(–bg-base);
+color: var(–text-primary);
+line-height: 1.7;
+overflow-x: hidden;
 }
 
 img, svg { display: block; max-width: 100%; }
 
-a { color: var(--cyan); text-decoration: none; transition: color var(--transition); }
+a { color: var(–cyan); text-decoration: none; transition: color var(–transition); }
 a:hover { color: #fff; }
 
 strong { color: #fff; font-weight: 600; }
 
 code {
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-  color: var(--cyan);
-  background: rgba(0,212,255,0.08);
-  padding: 1px 5px;
-  border-radius: 3px;
+font-family: var(–font-mono);
+font-size: 0.85em;
+color: var(–cyan);
+background: rgba(0,212,255,0.08);
+padding: 1px 5px;
+border-radius: 3px;
 }
 
 /* ─── SCROLLBAR ─────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: var(--blue-dim); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(–bg-base); }
+::-webkit-scrollbar-thumb { background: var(–blue-dim); border-radius: 3px; }
 
 /* ─── CONTAINER ─────────────────────────────────────────────── */
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
 }
 
 /* ─── NAV ───────────────────────────────────────────────────── */
 .navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(8, 12, 18, 0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition), border-color var(--transition);
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 1000;
+background: rgba(8, 12, 18, 0.85);
+backdrop-filter: blur(16px);
+border-bottom: 1px solid var(–border);
+transition: background var(–transition), border-color var(–transition);
 }
 
 .navbar.scrolled {
-  background: rgba(8, 12, 18, 0.97);
-  border-bottom-color: var(--border-bright);
+background: rgba(8, 12, 18, 0.97);
+border-bottom-color: var(–border-bright);
 }
 
 .nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 60px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+gap: 1rem;
 }
 
 .nav-logo {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 2px;
+font-family: var(–font-mono);
+font-size: 1.1rem;
+letter-spacing: 0.05em;
+color: #fff;
+display: flex;
+align-items: center;
+gap: 2px;
 }
 
-.logo-bracket { color: var(--cyan); opacity: 0.6; }
-.logo-text .accent { color: var(--cyan); }
+.logo-bracket { color: var(–cyan); opacity: 0.6; }
+.logo-text .accent { color: var(–cyan); }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+display: flex;
+list-style: none;
+gap: 2rem;
 }
 
 .nav-links a {
-  font-family: var(--font-display);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-sec);
-  padding: 4px 0;
-  position: relative;
+font-family: var(–font-display);
+font-size: 0.875rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–text-sec);
+padding: 4px 0;
+position: relative;
 }
 
 .nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
-  background: var(--cyan);
-  transition: width var(--transition);
+content: ‘’;
+position: absolute;
+bottom: -2px; left: 0;
+width: 0; height: 1px;
+background: var(–cyan);
+transition: width var(–transition);
 }
 
-.nav-links a:hover { color: var(--cyan); }
+.nav-links a:hover { color: var(–cyan); }
 .nav-links a:hover::after { width: 100%; }
 
+/* ─── NAV SIMULATE BUTTON ───────────────────────────────────── */
+.nav-simulate-btn {
+font-family: var(–font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #000 !important;
+background: linear-gradient(135deg, #00ff88, #00d4ff);
+padding: 7px 14px;
+border-radius: var(–radius);
+display: inline-flex;
+align-items: center;
+gap: 6px;
+transition: var(–transition);
+white-space: nowrap;
+flex-shrink: 0;
+}
+
+.nav-simulate-btn:hover {
+color: #000 !important;
+box-shadow: 0 0 20px rgba(0, 255, 136, 0.55);
+transform: translateY(-1px);
+}
+
+.nav-simulate-btn svg { flex-shrink: 0; }
+
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
+display: none;
+flex-direction: column;
+gap: 5px;
+background: none;
+border: none;
+cursor: pointer;
+padding: 4px;
 }
 
 .hamburger span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--text-sec);
-  border-radius: 2px;
-  transition: var(--transition);
+display: block;
+width: 24px; height: 2px;
+background: var(–text-sec);
+border-radius: 2px;
+transition: var(–transition);
 }
 
 .nav-mobile {
-  display: none;
-  flex-direction: column;
-  padding: 1rem 2rem;
-  border-top: 1px solid var(--border);
-  background: var(--bg-surface);
+display: none;
+flex-direction: column;
+padding: 1rem 2rem;
+border-top: 1px solid var(–border);
+background: var(–bg-surface);
 }
 
 .nav-mobile a {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-sec);
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--border);
+font-family: var(–font-display);
+font-size: 0.9rem;
+font-weight: 600;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–text-sec);
+padding: 0.75rem 0;
+border-bottom: 1px solid var(–border);
 }
 
 .nav-mobile a:last-child { border-bottom: none; }
@@ -189,787 +217,823 @@ code {
 
 /* ─── HERO ──────────────────────────────────────────────────── */
 .hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 2rem 80px;
-  overflow: hidden;
-  gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+padding: 120px 2rem 80px;
+overflow: hidden;
+gap: 4rem;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 .hero-grid-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(0,180,230,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,180,230,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 0;
+background-image:
+linear-gradient(rgba(0,180,230,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,180,230,0.03) 1px, transparent 1px);
+background-size: 60px 60px;
 }
 
 .hero-scanline {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    rgba(0, 0, 0, 0.08) 3px,
-    rgba(0, 0, 0, 0.08) 4px
-  );
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 0;
+background: repeating-linear-gradient(
+to bottom,
+transparent 0px,
+transparent 3px,
+rgba(0, 0, 0, 0.08) 3px,
+rgba(0, 0, 0, 0.08) 4px
+);
 }
 
 .hero::before {
-  content: '';
-  position: absolute;
-  top: -20%; right: -10%;
-  width: 700px; height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center,
-    rgba(0, 212, 255, 0.06) 0%,
-    rgba(26, 107, 255, 0.04) 40%,
-    transparent 70%);
-  pointer-events: none;
+content: ‘’;
+position: absolute;
+top: -20%; right: -10%;
+width: 700px; height: 700px;
+border-radius: 50%;
+background: radial-gradient(ellipse at center,
+rgba(0, 212, 255, 0.06) 0%,
+rgba(26, 107, 255, 0.04) 40%,
+transparent 70%);
+pointer-events: none;
 }
 
 .hero-content {
-  flex: 1;
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
+flex: 1;
+position: relative;
+z-index: 2;
+max-width: 640px;
 }
 
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: var(--cyan);
-  background: rgba(0,212,255,0.07);
-  border: 1px solid var(--border-bright);
-  padding: 6px 14px;
-  border-radius: var(--radius);
-  margin-bottom: 1.5rem;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+font-family: var(–font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.12em;
+color: var(–cyan);
+background: rgba(0,212,255,0.07);
+border: 1px solid var(–border-bright);
+padding: 6px 14px;
+border-radius: var(–radius);
+margin-bottom: 1.5rem;
 }
 
 .badge-dot {
-  width: 6px; height: 6px;
-  background: var(--cyan);
-  border-radius: 50%;
-  animation: blink 1.4s infinite;
+width: 6px; height: 6px;
+background: var(–cyan);
+border-radius: 50%;
+animation: blink 1.4s infinite;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+0%, 100% { opacity: 1; }
+50% { opacity: 0.2; }
 }
 
 .hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: #fff;
-  margin-bottom: 0.75rem;
+font-family: var(–font-display);
+font-size: clamp(2.4rem, 5vw, 4rem);
+font-weight: 700;
+line-height: 1.1;
+letter-spacing: -0.01em;
+color: #fff;
+margin-bottom: 0.75rem;
 }
 
 .accent-text {
-  background: linear-gradient(90deg, var(--cyan), var(--blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+background: linear-gradient(90deg, var(–cyan), var(–blue));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
 }
 
 .hero-tagline {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  color: var(--cyan-dim);
-  letter-spacing: 0.04em;
-  margin-bottom: 1.5rem;
+font-family: var(–font-mono);
+font-size: 1.05rem;
+color: var(–cyan-dim);
+letter-spacing: 0.04em;
+margin-bottom: 1.5rem;
 }
 
 .hero-desc {
-  font-size: 1rem;
-  color: var(--text-sec);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+font-size: 1rem;
+color: var(–text-sec);
+line-height: 1.8;
+margin-bottom: 2.5rem;
 }
 
 .hero-cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+margin-bottom: 3rem;
 }
 
 .btn-primary {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #000;
-  background: var(--cyan);
-  padding: 12px 28px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
+font-family: var(–font-display);
+font-weight: 700;
+font-size: 0.9rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: #000;
+background: var(–cyan);
+padding: 12px 28px;
+border-radius: var(–radius);
+transition: var(–transition);
+position: relative;
+overflow: hidden;
 }
 
 .btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.15);
-  transform: translateX(-100%);
-  transition: transform 0.4s;
+content: ‘’;
+position: absolute;
+inset: 0;
+background: rgba(255,255,255,0.15);
+transform: translateX(-100%);
+transition: transform 0.4s;
 }
 
 .btn-primary:hover {
-  color: #000;
-  box-shadow: 0 0 24px rgba(0,212,255,0.5);
-  transform: translateY(-2px);
+color: #000;
+box-shadow: 0 0 24px rgba(0,212,255,0.5);
+transform: translateY(-2px);
 }
 
 .btn-primary:hover::before { transform: translateX(0); }
 
 .btn-ghost {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-sec);
-  border: 1px solid var(--border);
-  padding: 12px 28px;
-  border-radius: var(--radius);
-  transition: var(--transition);
+font-family: var(–font-display);
+font-weight: 600;
+font-size: 0.9rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–text-sec);
+border: 1px solid var(–border);
+padding: 12px 28px;
+border-radius: var(–radius);
+transition: var(–transition);
 }
 
 .btn-ghost:hover {
-  color: var(--cyan);
-  border-color: var(--cyan);
-  background: var(--cyan-glow);
+color: var(–cyan);
+border-color: var(–cyan);
+background: var(–cyan-glow);
 }
+
+/* ─── WOKWI SIMULATE BUTTON ─────────────────────────────────── */
+.btn-simulate {
+font-family: var(–font-display);
+font-weight: 700;
+font-size: 0.9rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: #000 !important;
+background: linear-gradient(135deg, #00ff88, #00d4ff);
+padding: 12px 28px;
+border-radius: var(–radius);
+transition: var(–transition);
+position: relative;
+overflow: hidden;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.btn-simulate::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: rgba(255,255,255,0.18);
+transform: translateX(-100%);
+transition: transform 0.4s;
+}
+
+.btn-simulate:hover {
+color: #000 !important;
+box-shadow: 0 0 28px rgba(0, 255, 136, 0.55), 0 0 60px rgba(0, 212, 255, 0.2);
+transform: translateY(-2px);
+}
+
+.btn-simulate:hover::before { transform: translateX(0); }
 
 /* Hero stats */
 .hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+display: flex;
+align-items: center;
+gap: 1.5rem;
+flex-wrap: wrap;
 }
 
 .stat { text-align: left; }
 
 .stat-val {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 1.8rem;
-  color: var(--cyan);
-  line-height: 1;
+display: block;
+font-family: var(–font-mono);
+font-size: 1.8rem;
+color: var(–cyan);
+line-height: 1;
 }
 
 .stat-label {
-  display: block;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: 3px;
+display: block;
+font-size: 0.7rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–text-muted);
+margin-top: 3px;
 }
 
 .stat-divider {
-  width: 1px;
-  height: 40px;
-  background: var(--border);
+width: 1px;
+height: 40px;
+background: var(–border);
 }
 
 /* Hero arm diagram */
 .hero-arm-diagram {
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+position: relative;
+z-index: 2;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
 }
 
 .arm-svg {
-  width: 280px;
-  filter: drop-shadow(0 0 24px rgba(0,212,255,0.25));
-  animation: arm-float 4s ease-in-out infinite;
+width: 280px;
+filter: drop-shadow(0 0 24px rgba(0,212,255,0.25));
+animation: arm-float 4s ease-in-out infinite;
 }
 
 @keyframes arm-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
 }
 
 .joint-pulse {
-  animation: joint-glow 2s ease-in-out infinite;
+animation: joint-glow 2s ease-in-out infinite;
 }
 
 @keyframes joint-glow {
-  0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 2px var(--cyan)); }
-  50% { opacity: 1; filter: drop-shadow(0 0 8px var(--cyan)); }
+0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 2px var(–cyan)); }
+50% { opacity: 1; filter: drop-shadow(0 0 8px var(–cyan)); }
 }
 
 .arm-diagram-label {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  padding: 5px 14px;
-  border-radius: var(--radius);
+font-family: var(–font-mono);
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–text-muted);
+border: 1px solid var(–border);
+padding: 5px 14px;
+border-radius: var(–radius);
 }
 
 /* ─── SECTIONS ──────────────────────────────────────────────── */
 .section { padding: 100px 0; }
 
-.section-alt { background: var(--bg-alt); }
+.section-alt { background: var(–bg-alt); }
 
 .section-header {
-  margin-bottom: 3.5rem;
+margin-bottom: 3.5rem;
 }
 
 .section-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  color: var(--cyan);
-  display: block;
-  margin-bottom: 0.75rem;
+font-family: var(–font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.18em;
+color: var(–cyan);
+display: block;
+margin-bottom: 0.75rem;
 }
 
 .section-header h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.01em;
-  position: relative;
-  display: inline-block;
+font-family: var(–font-display);
+font-size: clamp(1.8rem, 3vw, 2.6rem);
+font-weight: 700;
+color: #fff;
+letter-spacing: -0.01em;
+position: relative;
+display: inline-block;
 }
 
 .section-header h2::after {
-  content: '';
-  position: absolute;
-  bottom: -8px; left: 0;
-  width: 60px; height: 2px;
-  background: linear-gradient(90deg, var(--cyan), transparent);
+content: ‘’;
+position: absolute;
+bottom: -8px; left: 0;
+width: 60px; height: 2px;
+background: linear-gradient(90deg, var(–cyan), transparent);
 }
 
 /* ─── OVERVIEW ──────────────────────────────────────────────── */
 .overview-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 3.5rem;
-  align-items: start;
+display: grid;
+grid-template-columns: 1fr 380px;
+gap: 3.5rem;
+align-items: start;
 }
 
 .overview-text p {
-  color: var(--text-sec);
-  margin-bottom: 1.25rem;
-  font-size: 1rem;
-  line-height: 1.8;
+color: var(–text-sec);
+margin-bottom: 1.25rem;
+font-size: 1rem;
+line-height: 1.8;
 }
 
 .overview-callout {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: var(--cyan-glow);
-  border: 1px solid var(--border-bright);
-  border-left: 3px solid var(--cyan);
-  border-radius: var(--radius-lg);
-  padding: 1.2rem 1.5rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: var(--text-sec);
-  line-height: 1.6;
+display: flex;
+align-items: flex-start;
+gap: 1rem;
+background: var(–cyan-glow);
+border: 1px solid var(–border-bright);
+border-left: 3px solid var(–cyan);
+border-radius: var(–radius-lg);
+padding: 1.2rem 1.5rem;
+margin-top: 2rem;
+font-size: 0.9rem;
+color: var(–text-sec);
+line-height: 1.6;
 }
 
 .callout-icon {
-  font-size: 1.2rem;
-  color: var(--cyan);
-  flex-shrink: 0;
+font-size: 1.2rem;
+color: var(–cyan);
+flex-shrink: 0;
 }
 
 /* Spec card */
 .spec-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+background: var(–bg-card);
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
+overflow: hidden;
 }
 
 .spec-title {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--cyan);
-  background: rgba(0,212,255,0.06);
-  padding: 0.8rem 1.2rem;
-  border-bottom: 1px solid var(--border);
+font-family: var(–font-mono);
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+color: var(–cyan);
+background: rgba(0,212,255,0.06);
+padding: 0.8rem 1.2rem;
+border-bottom: 1px solid var(–border);
 }
 
 .spec-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.65rem 1.2rem;
-  font-size: 0.82rem;
-  border-bottom: 1px solid rgba(0,180,230,0.06);
-  gap: 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0.65rem 1.2rem;
+font-size: 0.82rem;
+border-bottom: 1px solid rgba(0,180,230,0.06);
+gap: 1rem;
 }
 
 .spec-row:last-child { border-bottom: none; }
 
 .spec-row span:first-child {
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  flex-shrink: 0;
+color: var(–text-muted);
+font-family: var(–font-mono);
+font-size: 0.75rem;
+flex-shrink: 0;
 }
 
 .spec-row span:last-child {
-  color: var(--text-primary);
-  text-align: right;
-  font-size: 0.8rem;
+color: var(–text-primary);
+text-align: right;
+font-size: 0.8rem;
 }
 
 /* ─── FEATURES ──────────────────────────────────────────────── */
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
 }
 
 .feature-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition);
-  cursor: default;
+background: var(–bg-card);
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
+padding: 2rem 1.75rem;
+position: relative;
+overflow: hidden;
+transition: border-color var(–transition), background var(–transition), transform var(–transition), box-shadow var(–transition);
+cursor: default;
 }
 
 .feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  opacity: 0;
-  transition: opacity var(--transition);
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(–cyan), transparent);
+opacity: 0;
+transition: opacity var(–transition);
 }
 
 .feature-card:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-bright);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--border-bright);
+background: var(–bg-card-hover);
+border-color: var(–border-bright);
+transform: translateY(-4px);
+box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px var(–border-bright);
 }
 
 .feature-card:hover::before { opacity: 1; }
 
 .feature-icon {
-  width: 42px; height: 42px;
-  margin-bottom: 1.5rem;
+width: 42px; height: 42px;
+margin-bottom: 1.5rem;
 }
 
 .feature-icon svg { width: 100%; height: 100%; }
 
 .feature-number {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
+font-family: var(–font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+color: var(–text-muted);
+margin-bottom: 0.5rem;
 }
 
 .feature-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.01em;
+font-family: var(–font-display);
+font-size: 1.1rem;
+font-weight: 700;
+color: #fff;
+margin-bottom: 0.75rem;
+letter-spacing: 0.01em;
 }
 
 .feature-card p {
-  font-size: 0.875rem;
-  color: var(--text-sec);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+font-size: 0.875rem;
+color: var(–text-sec);
+line-height: 1.75;
+margin-bottom: 1.5rem;
 }
 
 .feature-tag {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: var(--cyan-dim);
-  border-top: 1px solid var(--border);
-  padding-top: 0.85rem;
+font-family: var(–font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.1em;
+color: var(–cyan-dim);
+border-top: 1px solid var(–border);
+padding-top: 0.85rem;
 }
 
 /* ─── HARDWARE TABLE ─────────────────────────────────────────── */
 .hardware-table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+overflow-x: auto;
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
 }
 
 .hardware-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.875rem;
+width: 100%;
+border-collapse: collapse;
+font-size: 0.875rem;
 }
 
 .hardware-table thead tr {
-  background: rgba(0,212,255,0.06);
-  border-bottom: 1px solid var(--border-bright);
+background: rgba(0,212,255,0.06);
+border-bottom: 1px solid var(–border-bright);
 }
 
 .hardware-table th {
-  text-align: left;
-  padding: 0.9rem 1.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  font-weight: normal;
+text-align: left;
+padding: 0.9rem 1.2rem;
+font-family: var(–font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–cyan);
+font-weight: normal;
 }
 
 .hardware-table td {
-  padding: 0.85rem 1.2rem;
-  color: var(--text-sec);
-  border-bottom: 1px solid rgba(0,180,230,0.06);
-  vertical-align: middle;
+padding: 0.85rem 1.2rem;
+color: var(–text-sec);
+border-bottom: 1px solid rgba(0,180,230,0.06);
+vertical-align: middle;
 }
 
 .hardware-table tbody tr:last-child td { border-bottom: none; }
 
 .hardware-table tbody tr {
-  transition: background var(--transition);
+transition: background var(–transition);
 }
 
 .hardware-table tbody tr:hover { background: rgba(0,212,255,0.03); }
 
 .td-num {
-  font-family: var(--font-mono);
-  color: var(--text-muted) !important;
-  font-size: 0.75rem !important;
+font-family: var(–font-mono);
+color: var(–text-muted) !important;
+font-size: 0.75rem !important;
 }
 
 .td-name {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff !important;
-  font-weight: 500;
+display: flex;
+align-items: center;
+gap: 10px;
+color: #fff !important;
+font-weight: 500;
 }
 
 .comp-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
+width: 7px; height: 7px;
+border-radius: 50%;
+flex-shrink: 0;
 }
 
-.comp-dot.cyan { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
-.comp-dot.blue { background: var(--blue); box-shadow: 0 0 6px var(--blue); }
+.comp-dot.cyan { background: var(–cyan); box-shadow: 0 0 6px var(–cyan); }
+.comp-dot.blue { background: var(–blue); box-shadow: 0 0 6px var(–blue); }
 
 /* ─── WORKING PRINCIPLE ──────────────────────────────────────── */
 .principle-layers {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+display: flex;
+flex-direction: column;
+gap: 0;
 }
 
 .layer-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem 2.5rem;
-  transition: border-color var(--transition);
+background: var(–bg-card);
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
+padding: 2rem 2.5rem;
+transition: border-color var(–transition);
 }
 
-.layer-card:hover { border-color: var(--border-bright); }
+.layer-card:hover { border-color: var(–border-bright); }
 
 .layer-badge {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  color: var(--cyan);
-  background: rgba(0,212,255,0.08);
-  border: 1px solid var(--border-bright);
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: var(--radius);
-  margin-bottom: 0.75rem;
+font-family: var(–font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.2em;
+color: var(–cyan);
+background: rgba(0,212,255,0.08);
+border: 1px solid var(–border-bright);
+display: inline-block;
+padding: 3px 10px;
+border-radius: var(–radius);
+margin-bottom: 0.75rem;
 }
 
 .layer-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.75rem;
+font-family: var(–font-display);
+font-size: 1.2rem;
+font-weight: 700;
+color: #fff;
+margin-bottom: 0.75rem;
 }
 
 .layer-desc {
-  font-size: 0.9rem;
-  color: var(--text-sec);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+font-size: 0.9rem;
+color: var(–text-sec);
+line-height: 1.8;
+margin-bottom: 1.5rem;
 }
 
 .layer-code {
-  background: #060b10;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
+background: #060b10;
+border: 1px solid var(–border);
+border-radius: var(–radius);
+overflow: hidden;
 }
 
 .layer-code pre {
-  padding: 1.2rem 1.5rem;
-  overflow-x: auto;
+padding: 1.2rem 1.5rem;
+overflow-x: auto;
 }
 
 .layer-code code {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--cyan);
-  background: none;
-  padding: 0;
+font-family: var(–font-mono);
+font-size: 0.8rem;
+color: var(–cyan);
+background: none;
+padding: 0;
 }
 
 .layer-connector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  color: var(--border-bright);
-  font-size: 1.2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 40px;
+color: var(–border-bright);
+font-size: 1.2rem;
 }
 
 /* ─── TECHNICAL HIGHLIGHTS ───────────────────────────────────── */
 .tech-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.5rem;
 }
 
 .tech-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+background: var(–bg-card);
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
+padding: 2rem;
+transition: border-color var(–transition), box-shadow var(–transition), transform var(–transition);
 }
 
 .tech-card:hover {
-  border-color: var(--border-bright);
-  box-shadow: 0 0 30px rgba(0,212,255,0.06);
-  transform: translateY(-2px);
+border-color: var(–border-bright);
+box-shadow: 0 0 30px rgba(0,212,255,0.06);
+transform: translateY(-2px);
 }
 
 .tech-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 1rem;
 }
 
 .tech-icon {
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  color: var(--cyan);
-  width: 40px;
-  text-align: center;
-  flex-shrink: 0;
+font-family: var(–font-mono);
+font-size: 1.5rem;
+color: var(–cyan);
+width: 40px;
+text-align: center;
+flex-shrink: 0;
 }
 
 .tech-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
+font-family: var(–font-display);
+font-size: 1.1rem;
+font-weight: 700;
+color: #fff;
 }
 
 .tech-card p {
-  font-size: 0.875rem;
-  color: var(--text-sec);
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
+font-size: 0.875rem;
+color: var(–text-sec);
+line-height: 1.8;
+margin-bottom: 1.25rem;
 }
 
 .tech-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+display: flex;
+gap: 0.5rem;
+flex-wrap: wrap;
 }
 
 .tech-tags span {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  color: var(--cyan-dim);
-  background: rgba(0,212,255,0.07);
-  border: 1px solid rgba(0,212,255,0.2);
-  padding: 3px 10px;
-  border-radius: 2px;
+font-family: var(–font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.08em;
+color: var(–cyan-dim);
+background: rgba(0,212,255,0.07);
+border: 1px solid rgba(0,212,255,0.2);
+padding: 3px 10px;
+border-radius: 2px;
 }
 
 /* ─── ROADMAP ────────────────────────────────────────────────── */
 .roadmap-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
 }
 
 .roadmap-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+background: var(–bg-card);
+border: 1px solid var(–border);
+border-radius: var(–radius-lg);
+padding: 1.75rem;
+transition: var(–transition);
+display: flex;
+flex-direction: column;
+gap: 0.85rem;
 }
 
 .roadmap-item:hover {
-  border-color: var(--border-bright);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+border-color: var(–border-bright);
+transform: translateY(-3px);
+box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
 .roadmap-status {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  padding: 3px 10px;
-  border-radius: var(--radius);
-  display: inline-block;
-  align-self: flex-start;
+font-family: var(–font-mono);
+font-size: 0.65rem;
+letter-spacing: 0.18em;
+padding: 3px 10px;
+border-radius: var(–radius);
+display: inline-block;
+align-self: flex-start;
 }
 
 .roadmap-status.planned {
-  color: var(--cyan);
-  background: rgba(0,212,255,0.08);
-  border: 1px solid rgba(0,212,255,0.3);
+color: var(–cyan);
+background: rgba(0,212,255,0.08);
+border: 1px solid rgba(0,212,255,0.3);
 }
 
 .roadmap-status.researching {
-  color: #7fb8ff;
-  background: rgba(26,107,255,0.1);
-  border: 1px solid rgba(26,107,255,0.3);
+color: #7fb8ff;
+background: rgba(26,107,255,0.1);
+border: 1px solid rgba(26,107,255,0.3);
 }
 
 .roadmap-status.concept {
-  color: var(--text-muted);
-  background: rgba(74,102,119,0.1);
-  border: 1px solid rgba(74,102,119,0.3);
+color: var(–text-muted);
+background: rgba(74,102,119,0.1);
+border: 1px solid rgba(74,102,119,0.3);
 }
 
 .roadmap-icon { font-size: 1.8rem; }
 
 .roadmap-item h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
+font-family: var(–font-display);
+font-size: 1rem;
+font-weight: 700;
+color: #fff;
 }
 
 .roadmap-item p {
-  font-size: 0.855rem;
-  color: var(--text-sec);
-  line-height: 1.75;
+font-size: 0.855rem;
+color: var(–text-sec);
+line-height: 1.75;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 .footer {
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border);
-  padding: 3.5rem 0 2rem;
+background: var(–bg-surface);
+border-top: 1px solid var(–border);
+padding: 3.5rem 0 2rem;
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 2rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
 }
 
 .footer-brand .nav-logo {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+font-size: 1.2rem;
+margin-bottom: 0.75rem;
 }
 
 .footer-brand p {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+font-size: 0.82rem;
+color: var(–text-muted);
+line-height: 1.6;
 }
 
 .footer-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  align-items: flex-end;
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+align-items: flex-end;
 }
 
 .mono-text {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
+font-family: var(–font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.1em;
+color: var(–text-muted);
 }
 
-.mono-text .accent { color: var(--cyan); }
+.mono-text .accent { color: var(–cyan); }
 
 .footer-bar {
-  height: 1px;
-  background: var(--border);
-  margin-bottom: 1.5rem;
+height: 1px;
+background: var(–border);
+margin-bottom: 1.5rem;
 }
 
 .footer-copy {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  text-align: center;
+font-size: 0.78rem;
+color: var(–text-muted);
+text-align: center;
 }
 
 /* ─── SCROLL REVEAL ──────────────────────────────────────────── */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+opacity: 0;
+transform: translateY(28px);
+transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
 .reveal.visible {
-  opacity: 1;
-  transform: none;
+opacity: 1;
+transform: none;
 }
 
 .reveal-delay-1 { transition-delay: 0.1s; }
@@ -980,43 +1044,44 @@ code {
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .overview-grid { grid-template-columns: 1fr; }
-  .overview-sidebar { order: -1; }
-  .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+.features-grid { grid-template-columns: repeat(2, 1fr); }
+.overview-grid { grid-template-columns: 1fr; }
+.overview-sidebar { order: -1; }
+.roadmap-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
+.nav-links { display: none; }
+.nav-simulate-btn { display: none; }
+.hamburger { display: flex; }
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 100px;
-    gap: 3rem;
-  }
+.hero {
+flex-direction: column;
+text-align: center;
+padding-top: 100px;
+gap: 3rem;
+}
 
-  .hero-badge { margin: 0 auto 1.5rem; }
-  .hero-cta { justify-content: center; }
-  .hero-stats { justify-content: center; }
+.hero-badge { margin: 0 auto 1.5rem; }
+.hero-cta { justify-content: center; }
+.hero-stats { justify-content: center; }
 
-  .features-grid { grid-template-columns: 1fr; }
-  .tech-grid { grid-template-columns: 1fr; }
-  .roadmap-grid { grid-template-columns: 1fr; }
+.features-grid { grid-template-columns: 1fr; }
+.tech-grid { grid-template-columns: 1fr; }
+.roadmap-grid { grid-template-columns: 1fr; }
 
-  .section { padding: 70px 0; }
+.section { padding: 70px 0; }
 
-  .layer-card { padding: 1.5rem; }
+.layer-card { padding: 1.5rem; }
 
-  .footer-inner { flex-direction: column; }
-  .footer-meta { align-items: flex-start; }
+.footer-inner { flex-direction: column; }
+.footer-meta { align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
-  .hero-stats { flex-direction: column; align-items: center; gap: 1rem; }
-  .stat-divider { width: 40px; height: 1px; }
-  .hardware-table th, .hardware-table td { padding: 0.65rem 0.75rem; font-size: 0.78rem; }
+.hero-stats { flex-direction: column; align-items: center; gap: 1rem; }
+.stat-divider { width: 40px; height: 1px; }
+.hardware-table th, .hardware-table td { padding: 0.65rem 0.75rem; font-size: 0.78rem; }
 }
 
 </style>
@@ -1026,6 +1091,7 @@ code {
 <body>
 
   <!-- ─── NAV ─────────────────────────────────────────────────────────────── -->
+
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <div class="nav-logo">
@@ -1041,6 +1107,11 @@ code {
         <li><a href="#technical">Technical</a></li>
         <li><a href="#future">Roadmap</a></li>
       </ul>
+      <!-- WOKWI NAV BUTTON -->
+      <a href="https://wokwi.com/projects/458330676566394881" target="_blank" rel="noopener noreferrer" class="nav-simulate-btn">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+        Simulate
+      </a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -1052,10 +1123,13 @@ code {
       <a href="#principle">Principle</a>
       <a href="#technical">Technical</a>
       <a href="#future">Roadmap</a>
+      <!-- WOKWI MOBILE LINK -->
+      <a href="https://wokwi.com/projects/458330676566394881" target="_blank" rel="noopener noreferrer" style="color:#00ff88 !important; font-weight:700;">&#9654; Run Simulation on Wokwi</a>
     </div>
   </nav>
 
   <!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+
   <section class="hero" id="hero">
     <div class="hero-grid-overlay"></div>
     <div class="hero-scanline"></div>
@@ -1075,6 +1149,11 @@ code {
       </p>
       <div class="hero-cta reveal reveal-delay-4">
         <a href="#overview" class="btn-primary">Explore Project</a>
+        <!-- WOKWI HERO BUTTON -->
+        <a href="https://wokwi.com/projects/458330676566394881" target="_blank" rel="noopener noreferrer" class="btn-simulate">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          Run Simulation
+        </a>
         <a href="#technical" class="btn-ghost">View Technical Details</a>
       </div>
       <div class="hero-stats reveal reveal-delay-5">
@@ -1121,6 +1200,7 @@ code {
   </section>
 
   <!-- ─── OVERVIEW ─────────────────────────────────────────────────────────── -->
+
   <section class="section" id="overview">
     <div class="container">
       <div class="section-header reveal">
@@ -1172,6 +1252,7 @@ code {
   </section>
 
   <!-- ─── FEATURES ─────────────────────────────────────────────────────────── -->
+
   <section class="section section-alt" id="features">
     <div class="container">
       <div class="section-header reveal">
@@ -1180,71 +1261,75 @@ code {
       </div>
       <div class="features-grid">
 
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="var(--cyan)" stroke-width="1.5"/><line x1="20" y1="2" x2="20" y2="10" stroke="var(--cyan)" stroke-width="1.5"/><line x1="20" y1="30" x2="20" y2="38" stroke="var(--cyan)" stroke-width="1.5"/><line x1="2" y1="20" x2="10" y2="20" stroke="var(--cyan)" stroke-width="1.5"/><line x1="30" y1="20" x2="38" y2="20" stroke="var(--cyan)" stroke-width="1.5"/><circle cx="20" cy="20" r="3" fill="var(--cyan)"/></svg>
-          </div>
-          <div class="feature-number">01</div>
-          <h3>Manual Potentiometer Control</h3>
-          <p>Four 10kΩ potentiometers provide continuous analog voltage signals to the Arduino's ADC channels. Each 10-bit reading (0–1023) maps linearly to a servo-specific angular range, enforcing safe mechanical limits per joint. Control is instantaneous with zero latency.</p>
-          <div class="feature-tag">ADC · 10-bit · Linear Mapping</div>
-        </div>
-
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="28" height="24" rx="2" stroke="var(--cyan)" stroke-width="1.5"/><line x1="11" y1="16" x2="29" y2="16" stroke="var(--cyan)" stroke-width="1.2"/><line x1="11" y1="20" x2="24" y2="20" stroke="var(--cyan)" stroke-width="1.2"/><line x1="11" y1="24" x2="21" y2="24" stroke="var(--cyan)" stroke-width="1.2"/><circle cx="32" cy="10" r="4" fill="var(--cyan)" opacity="0.8"/></svg>
-          </div>
-          <div class="feature-number">02</div>
-          <h3>Position Recording</h3>
-          <p>A dedicated record button triggers a snapshot of all four joint angles into a sequential SRAM array. Up to 50 waypoints can be captured per session. Each record event is debounced in firmware to eliminate false triggers, and the current index is tracked for overwrite protection.</p>
-          <div class="feature-tag">SRAM Array · Debounce · Snapshot</div>
-        </div>
-
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><polygon points="12,8 32,20 12,32" stroke="var(--cyan)" stroke-width="1.5" fill="none"/><line x1="6" y1="8" x2="6" y2="32" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <div class="feature-number">03</div>
-          <h3>Smooth Trajectory Playback</h3>
-          <p>During playback, the system iterates through stored waypoints and generates intermediate angle values via linear interpolation between consecutive positions. Servos update at 50 Hz, producing fluid, continuous motion rather than discrete jumps — critical for real-world manipulation tasks.</p>
-          <div class="feature-tag">50 Hz PWM · Lerp · Trajectory</div>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><line x1="6" y1="34" x2="34" y2="34" stroke="var(--cyan)" stroke-width="1.5"/><line x1="6" y1="6" x2="6" y2="34" stroke="var(--cyan)" stroke-width="1.5"/><polyline points="6,28 14,18 20,22 28,10 34,14" stroke="var(--cyan)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="28" cy="10" r="2.5" fill="var(--cyan)"/></svg>
-          </div>
-          <div class="feature-number">04</div>
-          <h3>Adjustable Playback Speed</h3>
-          <p>A dedicated analog input or multi-mode button cycles through playback speed presets — slow (high step count), normal, and fast. Speed adjustment alters the interpolation step density between waypoints, enabling both precise inspection of motion and rapid cycle execution.</p>
-          <div class="feature-tag">Step Density · Multi-mode · Cycle Time</div>
-        </div>
-
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="14" width="24" height="16" rx="2" stroke="var(--cyan)" stroke-width="1.5"/><path d="M14 14 V10 A6 6 0 0 1 26 10 V14" stroke="var(--cyan)" stroke-width="1.5" fill="none"/><circle cx="20" cy="22" r="3" fill="var(--cyan)" opacity="0.7"/></svg>
-          </div>
-          <div class="feature-number">05</div>
-          <h3>Safety Angle Constraints</h3>
-          <p>Each servo joint is individually constrained to a validated angular envelope defined in firmware constants. Regardless of raw potentiometer input, the mapped output is clamped before being written to the servo. This prevents over-rotation, physical collision between arm links, and mechanical wear to gears under load.</p>
-          <div class="feature-tag">Clamp · Per-Joint Limits · Collision Avoidance</div>
-        </div>
-
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-icon">
-            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="13" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 2"/><line x1="20" y1="10" x2="20" y2="20" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="28" y2="24" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="var(--cyan)"/></svg>
-          </div>
-          <div class="feature-number">06</div>
-          <h3>Real-Time Loop Architecture</h3>
-          <p>The firmware runs a deterministic 20 ms control loop. On each iteration, ADC reads, angle computation, servo writes, and button polling all complete within the loop budget. This guarantees consistent servo refresh rates and eliminates jerky motion artifacts caused by variable execution timing.</p>
-          <div class="feature-tag">20 ms Loop · Deterministic · ATmega328P</div>
-        </div>
-
+```
+    <div class="feature-card reveal">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="var(--cyan)" stroke-width="1.5"/><line x1="20" y1="2" x2="20" y2="10" stroke="var(--cyan)" stroke-width="1.5"/><line x1="20" y1="30" x2="20" y2="38" stroke="var(--cyan)" stroke-width="1.5"/><line x1="2" y1="20" x2="10" y2="20" stroke="var(--cyan)" stroke-width="1.5"/><line x1="30" y1="20" x2="38" y2="20" stroke="var(--cyan)" stroke-width="1.5"/><circle cx="20" cy="20" r="3" fill="var(--cyan)"/></svg>
       </div>
+      <div class="feature-number">01</div>
+      <h3>Manual Potentiometer Control</h3>
+      <p>Four 10kΩ potentiometers provide continuous analog voltage signals to the Arduino's ADC channels. Each 10-bit reading (0–1023) maps linearly to a servo-specific angular range, enforcing safe mechanical limits per joint. Control is instantaneous with zero latency.</p>
+      <div class="feature-tag">ADC · 10-bit · Linear Mapping</div>
     </div>
+
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="28" height="24" rx="2" stroke="var(--cyan)" stroke-width="1.5"/><line x1="11" y1="16" x2="29" y2="16" stroke="var(--cyan)" stroke-width="1.2"/><line x1="11" y1="20" x2="24" y2="20" stroke="var(--cyan)" stroke-width="1.2"/><line x1="11" y1="24" x2="21" y2="24" stroke="var(--cyan)" stroke-width="1.2"/><circle cx="32" cy="10" r="4" fill="var(--cyan)" opacity="0.8"/></svg>
+      </div>
+      <div class="feature-number">02</div>
+      <h3>Position Recording</h3>
+      <p>A dedicated record button triggers a snapshot of all four joint angles into a sequential SRAM array. Up to 50 waypoints can be captured per session. Each record event is debounced in firmware to eliminate false triggers, and the current index is tracked for overwrite protection.</p>
+      <div class="feature-tag">SRAM Array · Debounce · Snapshot</div>
+    </div>
+
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><polygon points="12,8 32,20 12,32" stroke="var(--cyan)" stroke-width="1.5" fill="none"/><line x1="6" y1="8" x2="6" y2="32" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="feature-number">03</div>
+      <h3>Smooth Trajectory Playback</h3>
+      <p>During playback, the system iterates through stored waypoints and generates intermediate angle values via linear interpolation between consecutive positions. Servos update at 50 Hz, producing fluid, continuous motion rather than discrete jumps — critical for real-world manipulation tasks.</p>
+      <div class="feature-tag">50 Hz PWM · Lerp · Trajectory</div>
+    </div>
+
+    <div class="feature-card reveal">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><line x1="6" y1="34" x2="34" y2="34" stroke="var(--cyan)" stroke-width="1.5"/><line x1="6" y1="6" x2="6" y2="34" stroke="var(--cyan)" stroke-width="1.5"/><polyline points="6,28 14,18 20,22 28,10 34,14" stroke="var(--cyan)" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="28" cy="10" r="2.5" fill="var(--cyan)"/></svg>
+      </div>
+      <div class="feature-number">04</div>
+      <h3>Adjustable Playback Speed</h3>
+      <p>A dedicated analog input or multi-mode button cycles through playback speed presets — slow (high step count), normal, and fast. Speed adjustment alters the interpolation step density between waypoints, enabling both precise inspection of motion and rapid cycle execution.</p>
+      <div class="feature-tag">Step Density · Multi-mode · Cycle Time</div>
+    </div>
+
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="14" width="24" height="16" rx="2" stroke="var(--cyan)" stroke-width="1.5"/><path d="M14 14 V10 A6 6 0 0 1 26 10 V14" stroke="var(--cyan)" stroke-width="1.5" fill="none"/><circle cx="20" cy="22" r="3" fill="var(--cyan)" opacity="0.7"/></svg>
+      </div>
+      <div class="feature-number">05</div>
+      <h3>Safety Angle Constraints</h3>
+      <p>Each servo joint is individually constrained to a validated angular envelope defined in firmware constants. Regardless of raw potentiometer input, the mapped output is clamped before being written to the servo. This prevents over-rotation, physical collision between arm links, and mechanical wear to gears under load.</p>
+      <div class="feature-tag">Clamp · Per-Joint Limits · Collision Avoidance</div>
+    </div>
+
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">
+        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="13" stroke="var(--cyan)" stroke-width="1.5" stroke-dasharray="4 2"/><line x1="20" y1="10" x2="20" y2="20" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="28" y2="24" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="var(--cyan)"/></svg>
+      </div>
+      <div class="feature-number">06</div>
+      <h3>Real-Time Loop Architecture</h3>
+      <p>The firmware runs a deterministic 20 ms control loop. On each iteration, ADC reads, angle computation, servo writes, and button polling all complete within the loop budget. This guarantees consistent servo refresh rates and eliminates jerky motion artifacts caused by variable execution timing.</p>
+      <div class="feature-tag">20 ms Loop · Deterministic · ATmega328P</div>
+    </div>
+
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ─── HARDWARE ─────────────────────────────────────────────────────────── -->
+
   <section class="section" id="hardware">
     <div class="container">
       <div class="section-header reveal">
@@ -1326,6 +1411,7 @@ code {
   </section>
 
   <!-- ─── WORKING PRINCIPLE ────────────────────────────────────────────────── -->
+
   <section class="section section-alt" id="principle">
     <div class="container">
       <div class="section-header reveal">
@@ -1334,95 +1420,111 @@ code {
       </div>
       <div class="principle-layers">
 
-        <div class="layer-card reveal">
-          <div class="layer-badge">LAYER 01</div>
-          <h3 class="layer-title">Input Layer — Potentiometer Sensing</h3>
-          <p class="layer-desc">
-            Each of the four 10kΩ potentiometers forms a voltage divider fed into an analog pin.
-            The ATmega328P's 10-bit successive-approximation ADC samples each channel sequentially
-            at the start of every control loop iteration. Readings are averaged over 4 samples per
-            channel to reduce quantization noise before being forwarded to the mapping stage.
-          </p>
-          <div class="layer-code">
-            <pre><code>// ADC read with oversampling
+```
+    <div class="layer-card reveal">
+      <div class="layer-badge">LAYER 01</div>
+      <h3 class="layer-title">Input Layer — Potentiometer Sensing</h3>
+      <p class="layer-desc">
+        Each of the four 10kΩ potentiometers forms a voltage divider fed into an analog pin.
+        The ATmega328P's 10-bit successive-approximation ADC samples each channel sequentially
+        at the start of every control loop iteration. Readings are averaged over 4 samples per
+        channel to reduce quantization noise before being forwarded to the mapping stage.
+      </p>
+      <div class="layer-code">
+        <pre><code>// ADC read with oversampling
+```
+
 int raw = 0;
-for(int i = 0; i &lt; 4; i++) raw += analogRead(POT_PIN);
+for(int i = 0; i < 4; i++) raw += analogRead(POT_PIN);
 int angle = map(raw / 4, 0, 1023, JOINT_MIN, JOINT_MAX);</code></pre>
-          </div>
-        </div>
+</div>
+</div>
 
-        <div class="layer-connector reveal"><span>▼</span></div>
+```
+    <div class="layer-connector reveal"><span>▼</span></div>
 
-        <div class="layer-card reveal">
-          <div class="layer-badge">LAYER 02</div>
-          <h3 class="layer-title">Processing Layer — Angle Mapping &amp; Storage</h3>
-          <p class="layer-desc">
-            Oversampled ADC values are passed through the Arduino <code>map()</code> function to
-            translate the 0–1023 domain into per-joint angular limits stored as firmware constants.
-            A <code>constrain()</code> call enforces hard safety bounds before the angle is used.
-            When the record button is pressed, all four current angles are written into a 2D integer
-            array (<code>positions[50][4]</code>), and the sequence index is incremented.
-          </p>
-          <div class="layer-code">
-            <pre><code>// Record snapshot
+    <div class="layer-card reveal">
+      <div class="layer-badge">LAYER 02</div>
+      <h3 class="layer-title">Processing Layer — Angle Mapping &amp; Storage</h3>
+      <p class="layer-desc">
+        Oversampled ADC values are passed through the Arduino <code>map()</code> function to
+        translate the 0–1023 domain into per-joint angular limits stored as firmware constants.
+        A <code>constrain()</code> call enforces hard safety bounds before the angle is used.
+        When the record button is pressed, all four current angles are written into a 2D integer
+        array (<code>positions[50][4]</code>), and the sequence index is incremented.
+      </p>
+      <div class="layer-code">
+        <pre><code>// Record snapshot
+```
+
 positions[recordIndex][0] = angle[BASE];
 positions[recordIndex][1] = angle[SHOULDER];
 positions[recordIndex][2] = angle[ELBOW];
 positions[recordIndex][3] = angle[WRIST];
 recordIndex++;</code></pre>
-          </div>
-        </div>
+</div>
+</div>
 
-        <div class="layer-connector reveal"><span>▼</span></div>
+```
+    <div class="layer-connector reveal"><span>▼</span></div>
 
-        <div class="layer-card reveal">
-          <div class="layer-badge">LAYER 03</div>
-          <h3 class="layer-title">Output Layer — Servo PWM Control</h3>
-          <p class="layer-desc">
-            The Arduino Servo library generates 50 Hz PWM signals with pulse widths from 544 µs
-            to 2400 µs, mapping 0°–180°. Each servo is driven on a dedicated digital pin. During
-            manual mode, computed angles are written directly to servos each loop cycle. During
-            playback, interpolated intermediate angles are written instead, advancing the arm
-            smoothly through the recorded trajectory.
-          </p>
-          <div class="layer-code">
-            <pre><code>// Write to all joints
+    <div class="layer-card reveal">
+      <div class="layer-badge">LAYER 03</div>
+      <h3 class="layer-title">Output Layer — Servo PWM Control</h3>
+      <p class="layer-desc">
+        The Arduino Servo library generates 50 Hz PWM signals with pulse widths from 544 µs
+        to 2400 µs, mapping 0°–180°. Each servo is driven on a dedicated digital pin. During
+        manual mode, computed angles are written directly to servos each loop cycle. During
+        playback, interpolated intermediate angles are written instead, advancing the arm
+        smoothly through the recorded trajectory.
+      </p>
+      <div class="layer-code">
+        <pre><code>// Write to all joints
+```
+
 servo[BASE].write(currentAngle[BASE]);
 servo[SHOULDER].write(currentAngle[SHOULDER]);
 servo[ELBOW].write(currentAngle[ELBOW]);
 servo[WRIST].write(currentAngle[WRIST]);</code></pre>
-          </div>
-        </div>
+</div>
+</div>
 
-        <div class="layer-connector reveal"><span>▼</span></div>
+```
+    <div class="layer-connector reveal"><span>▼</span></div>
 
-        <div class="layer-card reveal">
-          <div class="layer-badge">LAYER 04</div>
-          <h3 class="layer-title">Playback — Linear Interpolation Engine</h3>
-          <p class="layer-desc">
-            Between each pair of consecutive waypoints, the playback engine computes <code>N</code>
-            intermediate frames (where N is determined by the speed setting). For each frame
-            <code>t ∈ [0, N]</code>, the angle for joint <code>j</code> is:
-            <strong>angle = start[j] + (end[j] − start[j]) × (t / N)</strong>.
-            Each frame is written and held for a fixed delay, producing smooth, continuous servo
-            motion. The loop concludes by optionally cycling back to the first waypoint.
-          </p>
-          <div class="layer-code">
-            <pre><code>// Interpolate between waypoints
-for(int t = 0; t &lt;= STEPS; t++) {
-  float alpha = (float)t / STEPS;
-  for(int j = 0; j &lt; 4; j++)
-    servo[j].write(start[j] + (end[j]-start[j]) * alpha);
-  delay(FRAME_DELAY);
+    <div class="layer-card reveal">
+      <div class="layer-badge">LAYER 04</div>
+      <h3 class="layer-title">Playback — Linear Interpolation Engine</h3>
+      <p class="layer-desc">
+        Between each pair of consecutive waypoints, the playback engine computes <code>N</code>
+        intermediate frames (where N is determined by the speed setting). For each frame
+        <code>t ∈ [0, N]</code>, the angle for joint <code>j</code> is:
+        <strong>angle = start[j] + (end[j] − start[j]) × (t / N)</strong>.
+        Each frame is written and held for a fixed delay, producing smooth, continuous servo
+        motion. The loop concludes by optionally cycling back to the first waypoint.
+      </p>
+      <div class="layer-code">
+        <pre><code>// Interpolate between waypoints
+```
+
+for(int t = 0; t <= STEPS; t++) {
+float alpha = (float)t / STEPS;
+for(int j = 0; j < 4; j++)
+servo[j].write(start[j] + (end[j]-start[j]) * alpha);
+delay(FRAME_DELAY);
 }</code></pre>
-          </div>
-        </div>
+</div>
+</div>
 
-      </div>
-    </div>
+```
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ─── TECHNICAL HIGHLIGHTS ─────────────────────────────────────────────── -->
+
   <section class="section" id="technical">
     <div class="container">
       <div class="section-header reveal">
@@ -1431,47 +1533,51 @@ for(int t = 0; t &lt;= STEPS; t++) {
       </div>
       <div class="tech-grid">
 
-        <div class="tech-card reveal">
-          <div class="tech-card-header">
-            <span class="tech-icon">〜</span>
-            <h3>PWM Servo Control</h3>
-          </div>
-          <p>Standard RC servo protocol uses a 50 Hz (20 ms period) PWM signal. Pulse width between 1 ms and 2 ms commands 0°–180°. The ATmega328P's Timer1 16-bit hardware timer generates these pulses in hardware, freeing the CPU for computation. The Arduino Servo library abstracts this, but write() ultimately writes to the OCR1A/B compare registers directly.</p>
-          <div class="tech-tags"><span>Timer1</span><span>OCR1A/B</span><span>50 Hz</span><span>1–2 ms pulse</span></div>
-        </div>
-
-        <div class="tech-card reveal reveal-delay-1">
-          <div class="tech-card-header">
-            <span class="tech-icon">[]</span>
-            <h3>Array-Based Memory Storage</h3>
-          </div>
-          <p>Joint positions are stored in a statically allocated 2D integer array: <code>int positions[MAX_POS][NUM_JOINTS]</code>. This occupies 400 bytes of SRAM (50 × 4 × 2 bytes) on the ATmega328P's 2kB SRAM — tight but feasible. Index management, boundary checks, and reset logic run in O(1) time with no dynamic allocation, ensuring deterministic execution.</p>
-          <div class="tech-tags"><span>Static SRAM</span><span>O(1) access</span><span>2D int array</span><span>400B footprint</span></div>
-        </div>
-
-        <div class="tech-card reveal">
-          <div class="tech-card-header">
-            <span class="tech-icon">∿</span>
-            <h3>Motion Interpolation Algorithm</h3>
-          </div>
-          <p>Linear interpolation (lerp) generates a smooth velocity profile between discrete waypoints. While not as smooth as cubic spline or trapezoidal motion profiles, lerp is computationally trivial — one multiply and one add per joint per frame — keeping loop latency under budget. Future upgrades may implement minimum-jerk polynomial trajectories for smoother acceleration and deceleration.</p>
-          <div class="tech-tags"><span>Lerp</span><span>Waypoints</span><span>Velocity Profile</span><span>O(N·J)</span></div>
-        </div>
-
-        <div class="tech-card reveal reveal-delay-1">
-          <div class="tech-card-header">
-            <span class="tech-icon">⊞</span>
-            <h3>Mechanical Safety Constraints</h3>
-          </div>
-          <p>Firmware-level constraints prevent commanding any joint beyond its physical travel. Per-joint min/max constants are derived from mechanical measurement of the arm's safe range, accounting for link clearances and cable management. The constrain() function ensures voltage noise or software bugs can never produce an out-of-range write, preventing gear wear and structural collision in the ABS-printed frame.</p>
-          <div class="tech-tags"><span>constrain()</span><span>Per-joint constants</span><span>ABS Frame</span><span>Failsafe</span></div>
-        </div>
-
+```
+    <div class="tech-card reveal">
+      <div class="tech-card-header">
+        <span class="tech-icon">〜</span>
+        <h3>PWM Servo Control</h3>
       </div>
+      <p>Standard RC servo protocol uses a 50 Hz (20 ms period) PWM signal. Pulse width between 1 ms and 2 ms commands 0°–180°. The ATmega328P's Timer1 16-bit hardware timer generates these pulses in hardware, freeing the CPU for computation. The Arduino Servo library abstracts this, but write() ultimately writes to the OCR1A/B compare registers directly.</p>
+      <div class="tech-tags"><span>Timer1</span><span>OCR1A/B</span><span>50 Hz</span><span>1–2 ms pulse</span></div>
     </div>
+
+    <div class="tech-card reveal reveal-delay-1">
+      <div class="tech-card-header">
+        <span class="tech-icon">[]</span>
+        <h3>Array-Based Memory Storage</h3>
+      </div>
+      <p>Joint positions are stored in a statically allocated 2D integer array: <code>int positions[MAX_POS][NUM_JOINTS]</code>. This occupies 400 bytes of SRAM (50 × 4 × 2 bytes) on the ATmega328P's 2kB SRAM — tight but feasible. Index management, boundary checks, and reset logic run in O(1) time with no dynamic allocation, ensuring deterministic execution.</p>
+      <div class="tech-tags"><span>Static SRAM</span><span>O(1) access</span><span>2D int array</span><span>400B footprint</span></div>
+    </div>
+
+    <div class="tech-card reveal">
+      <div class="tech-card-header">
+        <span class="tech-icon">∿</span>
+        <h3>Motion Interpolation Algorithm</h3>
+      </div>
+      <p>Linear interpolation (lerp) generates a smooth velocity profile between discrete waypoints. While not as smooth as cubic spline or trapezoidal motion profiles, lerp is computationally trivial — one multiply and one add per joint per frame — keeping loop latency under budget. Future upgrades may implement minimum-jerk polynomial trajectories for smoother acceleration and deceleration.</p>
+      <div class="tech-tags"><span>Lerp</span><span>Waypoints</span><span>Velocity Profile</span><span>O(N·J)</span></div>
+    </div>
+
+    <div class="tech-card reveal reveal-delay-1">
+      <div class="tech-card-header">
+        <span class="tech-icon">⊞</span>
+        <h3>Mechanical Safety Constraints</h3>
+      </div>
+      <p>Firmware-level constraints prevent commanding any joint beyond its physical travel. Per-joint min/max constants are derived from mechanical measurement of the arm's safe range, accounting for link clearances and cable management. The constrain() function ensures voltage noise or software bugs can never produce an out-of-range write, preventing gear wear and structural collision in the ABS-printed frame.</p>
+      <div class="tech-tags"><span>constrain()</span><span>Per-joint constants</span><span>ABS Frame</span><span>Failsafe</span></div>
+    </div>
+
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ─── FUTURE IMPROVEMENTS ──────────────────────────────────────────────── -->
+
   <section class="section section-alt" id="future">
     <div class="container">
       <div class="section-header reveal">
@@ -1480,53 +1586,57 @@ for(int t = 0; t &lt;= STEPS; t++) {
       </div>
       <div class="roadmap-grid">
 
-        <div class="roadmap-item reveal">
-          <div class="roadmap-status planned">PLANNED</div>
-          <div class="roadmap-icon">💾</div>
-          <h3>EEPROM Persistent Storage</h3>
-          <p>Migrate position arrays from volatile SRAM to the ATmega328P's 1kB EEPROM. Sequences survive power cycles and can be recalled without re-teaching — essential for production-use automation fixtures.</p>
-        </div>
-
-        <div class="roadmap-item reveal reveal-delay-1">
-          <div class="roadmap-status planned">PLANNED</div>
-          <div class="roadmap-icon">📺</div>
-          <h3>LCD Status Display</h3>
-          <p>Add an I²C 16×2 LCD to display current mode (MANUAL / RECORD / PLAY), active joint angles, recorded position count, and playback speed — eliminating guesswork during operation.</p>
-        </div>
-
-        <div class="roadmap-item reveal reveal-delay-2">
-          <div class="roadmap-status researching">RESEARCHING</div>
-          <div class="roadmap-icon">📡</div>
-          <h3>Bluetooth Wireless Control</h3>
-          <p>Replace physical potentiometers with an HC-05 Bluetooth module and a smartphone slider interface. Commands transmitted as serial packets over UART, enabling wireless teach-and-playback from any Android device.</p>
-        </div>
-
-        <div class="roadmap-item reveal">
-          <div class="roadmap-status researching">RESEARCHING</div>
-          <div class="roadmap-icon">🔢</div>
-          <h3>Inverse Kinematics Engine</h3>
-          <p>Implement a geometric or Jacobian-based IK solver to accept Cartesian coordinates (X, Y, Z) as input and compute the required joint angles automatically — shifting from joint-space to task-space control.</p>
-        </div>
-
-        <div class="roadmap-item reveal reveal-delay-1">
-          <div class="roadmap-status concept">CONCEPT</div>
-          <div class="roadmap-icon">🌐</div>
-          <h3>Web Dashboard Integration</h3>
-          <p>Pair with an ESP32 Wi-Fi module to expose a REST API and browser-based dashboard for real-time joint angle visualization, sequence upload/download, and remote playback triggering over a local network.</p>
-        </div>
-
-        <div class="roadmap-item reveal reveal-delay-2">
-          <div class="roadmap-status concept">CONCEPT</div>
-          <div class="roadmap-icon">⚡</div>
-          <h3>Minimum-Jerk Trajectory Planning</h3>
-          <p>Replace linear interpolation with 5th-order polynomial (minimum-jerk) motion profiles, producing smooth acceleration/deceleration envelopes. This reduces mechanical stress on the ABS-printed joints and improves precision at trajectory endpoints.</p>
-        </div>
-
-      </div>
+```
+    <div class="roadmap-item reveal">
+      <div class="roadmap-status planned">PLANNED</div>
+      <div class="roadmap-icon">💾</div>
+      <h3>EEPROM Persistent Storage</h3>
+      <p>Migrate position arrays from volatile SRAM to the ATmega328P's 1kB EEPROM. Sequences survive power cycles and can be recalled without re-teaching — essential for production-use automation fixtures.</p>
     </div>
+
+    <div class="roadmap-item reveal reveal-delay-1">
+      <div class="roadmap-status planned">PLANNED</div>
+      <div class="roadmap-icon">📺</div>
+      <h3>LCD Status Display</h3>
+      <p>Add an I²C 16×2 LCD to display current mode (MANUAL / RECORD / PLAY), active joint angles, recorded position count, and playback speed — eliminating guesswork during operation.</p>
+    </div>
+
+    <div class="roadmap-item reveal reveal-delay-2">
+      <div class="roadmap-status researching">RESEARCHING</div>
+      <div class="roadmap-icon">📡</div>
+      <h3>Bluetooth Wireless Control</h3>
+      <p>Replace physical potentiometers with an HC-05 Bluetooth module and a smartphone slider interface. Commands transmitted as serial packets over UART, enabling wireless teach-and-playback from any Android device.</p>
+    </div>
+
+    <div class="roadmap-item reveal">
+      <div class="roadmap-status researching">RESEARCHING</div>
+      <div class="roadmap-icon">🔢</div>
+      <h3>Inverse Kinematics Engine</h3>
+      <p>Implement a geometric or Jacobian-based IK solver to accept Cartesian coordinates (X, Y, Z) as input and compute the required joint angles automatically — shifting from joint-space to task-space control.</p>
+    </div>
+
+    <div class="roadmap-item reveal reveal-delay-1">
+      <div class="roadmap-status concept">CONCEPT</div>
+      <div class="roadmap-icon">🌐</div>
+      <h3>Web Dashboard Integration</h3>
+      <p>Pair with an ESP32 Wi-Fi module to expose a REST API and browser-based dashboard for real-time joint angle visualization, sequence upload/download, and remote playback triggering over a local network.</p>
+    </div>
+
+    <div class="roadmap-item reveal reveal-delay-2">
+      <div class="roadmap-status concept">CONCEPT</div>
+      <div class="roadmap-icon">⚡</div>
+      <h3>Minimum-Jerk Trajectory Planning</h3>
+      <p>Replace linear interpolation with 5th-order polynomial (minimum-jerk) motion profiles, producing smooth acceleration/deceleration envelopes. This reduces mechanical stress on the ABS-printed joints and improves precision at trajectory endpoints.</p>
+    </div>
+
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ─── FOOTER ────────────────────────────────────────────────────────────── -->
+
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -1749,5 +1859,6 @@ for(int t = 0; t &lt;= STEPS; t++) {
   if (el) el.textContent = el.textContent.replace('2024', new Date().getFullYear());
 })();
 </script>
+
 </body>
 </html>
